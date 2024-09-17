@@ -107,7 +107,7 @@ public class Main {
         int trainSeats = 102;
         int seatingPlaces = 60;
         int standingPlaces = trainSeats - seatingPlaces;
-        boolean freeSeatsOne = (trainSeats + (seatingPlaces + standingPlaces) != 0);
+        boolean freeSeatsOne = seatingPlaces + standingPlaces != 0;
         //Is not terms (empty train) - Условие 1 (пустой вагон)
         if (freeSeatsOne) {
             System.out.println("\nЗадача №6: \nВ вагоне свободно " + trainSeats + " мест, из них свободно " + seatingPlaces + " сидячих и " + standingPlaces + " стоячих мест.");
@@ -120,7 +120,7 @@ public class Main {
         trainSeats = 102 - (seatingPeople + standingPeople);
         seatingPlaces = 60 - seatingPeople;
         standingPlaces = standingPlaces - standingPeople;
-        boolean freeSeatsTwo = (trainSeats + (seatingPlaces + standingPlaces)) != 0;
+        boolean freeSeatsTwo = seatingPlaces + standingPlaces != 0;
         if (freeSeatsTwo) {
             System.out.println("В вагоне свободно " + trainSeats + " мест, из них свободно " + seatingPlaces + " сидячих и " + standingPlaces + " стоячих мест.");
         } else {
