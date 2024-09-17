@@ -77,46 +77,51 @@ public class Main {
 
 
         //Task 5
-        int childAge1 = 3;
-        int childAge2 = 10;
-        int childAge3 = 15;
+        int childAgeOne = 3;
+        boolean childOne = childAgeOne <= 4;
+        int childAgeTwo = 10;
+        boolean childTwo = childAgeTwo >= 5 && childAgeTwo <= 13;
+        int childAgeThree = 15;
+        boolean childThree = childAgeThree >= 14;
         // Term 1
-        if (childAge1 > 5 && childAge1 < 14) {
-            System.out.println("Если возраст ребенка равен " + childAge1 + ", то ему можно кататься на аттракционе в сопровождении взрослого.");
+        if (childOne) {
+            System.out.println("\nЗадача №5: \nЕсли возраст ребенка равен " + childAgeOne + ", то ему нельзя кататься на аттракционе.");
         } else {
-            System.out.println("\nЗадача №5: \nЕсли возраст ребенка равен " + childAge1 + ", то ему нельзя кататься на аттракционе.");
+            System.out.println("Возраст ребенка больше 5 лет");
         }
         // Term 2
-        if (childAge2 > 14) {
-            System.out.println("Если возраст ребенка равен " + childAge2 + ", то ему можно кататься на аттракционе без сопровождения взрослого.");
+        if (childTwo) {
+            System.out.println("Если возраст ребенка равен " + childAgeTwo + ", то ему можно кататься на аттракционе в сопровождении взрослого.");
         } else {
-            System.out.println("Если возраст ребенка равен " + childAge2 + ", то ему можно кататься на аттракционе в сопровождении взрослого.");
+            System.out.println("Возраст ребенка больше 14 лет");
         }
         // Term 3
-        if (childAge3 > 14 && childAge3 > 5) {
-            System.out.println("Если возраст ребенка равен " + childAge3 + ", то ему можно кататься на аттракционе без сопровождения взрослого.");
+        if (childThree) {
+            System.out.println("Если возраст ребенка равен " + childAgeThree + ", то ему можно кататься на аттракционе без сопровождения взрослого.");
         } else {
-            System.out.println("Если возраст ребенка равен " + childAge3 + ", то ему кататься на аттракционе в сопровождении взрослого.");
+            System.out.println("Возраст ребенка меньше 14 лет");
         }
 
 
         //Task 6
-        int trainSeats = 120;
+        int trainSeats = 102;
         int seatingPlaces = 60;
         int standingPlaces = trainSeats - seatingPlaces;
-        //Is not terms (empty train)
-        if (trainSeats <= 120 && trainSeats > 0 && seatingPlaces <= 60 && seatingPlaces > 0 && standingPlaces <= (trainSeats - seatingPlaces) && standingPlaces > 0) {
+        boolean freeSeatsOne = (trainSeats + (seatingPlaces + standingPlaces) != 0);
+        //Is not terms (empty train) - Условие 1 (пустой вагон)
+        if (freeSeatsOne) {
             System.out.println("\nЗадача №6: \nВ вагоне свободно " + trainSeats + " мест, из них свободно " + seatingPlaces + " сидячих и " + standingPlaces + " стоячих мест.");
         } else {
             System.out.println("В вагоне свободных мест нет");
         }
-        //Train with people (Full train)
-        int seatingPeople = 60;
-        int standingPeople = 60;
-        trainSeats = 120 - (seatingPeople + standingPeople);
+        //Train with people (Full train) - Условие 2 (вагон с людьми)
+        int seatingPeople = 20; // Зашли в вагон и заняли сидячих мест
+        int standingPeople = 10; // Зашли в вагон и заняли стоячих мест
+        trainSeats = 102 - (seatingPeople + standingPeople);
         seatingPlaces = 60 - seatingPeople;
         standingPlaces = standingPlaces - standingPeople;
-        if (trainSeats <= 120 && trainSeats > 0 && seatingPlaces <= 60 && seatingPlaces > 0 && standingPlaces <= (trainSeats - seatingPlaces) && standingPlaces > 0) {
+        boolean freeSeatsTwo = (trainSeats + (seatingPlaces + standingPlaces)) != 0;
+        if (freeSeatsTwo) {
             System.out.println("В вагоне свободно " + trainSeats + " мест, из них свободно " + seatingPlaces + " сидячих и " + standingPlaces + " стоячих мест.");
         } else {
             System.out.println("В вагоне свободных мест нет");
